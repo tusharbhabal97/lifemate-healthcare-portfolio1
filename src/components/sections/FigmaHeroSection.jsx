@@ -1,12 +1,62 @@
-import heroDoctor from '../../assets/hero-doctor.png';
+const imgPlaceholder = 'https://www.figma.com/api/mcp/asset/ea44cf49-12cd-4844-af18-48fe1e8da96f';
+const imgVector = 'https://www.figma.com/api/mcp/asset/3c27f2fa-ebae-42fd-ac5f-9db514fe61ea';
+const imgVector1 = 'https://www.figma.com/api/mcp/asset/eda27f31-1a5f-48cc-a36f-faba8ac66b59';
+const imgVector2 = 'https://www.figma.com/api/mcp/asset/de1b65fd-9481-4033-af12-746123f0ee71';
+const imgVector3 = 'https://www.figma.com/api/mcp/asset/2130b38b-6d4d-4244-acac-6364ec9dc329';
+const imgVector4 = 'https://www.figma.com/api/mcp/asset/55ce7be2-b78d-4f3f-b940-0df83b0ec336';
+const imgVector5 = 'https://www.figma.com/api/mcp/asset/533dee7a-9b56-4dcf-b9d1-02d94f302842';
+const imgVector6 = 'https://www.figma.com/api/mcp/asset/089773dd-f6db-42a1-af32-785b3adbbecb';
+const imgVector7 = 'https://www.figma.com/api/mcp/asset/8cababe8-9617-4aec-ab47-8d629d6cc461';
+const imgVector8 = 'https://www.figma.com/api/mcp/asset/718cdaa5-7a1f-4931-a703-282575c403a9';
 
 const FigmaHeroSection = () => {
   return (
-    <section id="home" className="relative overflow-hidden bg-[#F7FBFD]" aria-label="Hero section">
-      <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-[176px] w-[112px] rounded-br-[48px] bg-[#0E5A8A] lg:block" />
-      <div className="pointer-events-none absolute right-0 top-0 hidden h-full w-[48%] bg-[#0E5A8A] lg:block" />
-      <div className="pointer-events-none absolute right-[8%] top-[12%] hidden h-24 w-24 rounded-full bg-[#1D9BF0]/35 blur-2xl lg:block" />
-      <div className="pointer-events-none absolute right-[32%] bottom-[18%] hidden h-20 w-20 rounded-full bg-[#14C94A]/30 blur-2xl lg:block" />
+    <section id="home" className="relative overflow-hidden bg-[#F7FBFD] lg:h-[900px]" aria-label="Hero section">
+      <div className="relative w-full">
+        <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-[176.96px] w-[111.61px] rounded-br-[48px] bg-[#0E5A8A] lg:block" />
+
+        <div className="pointer-events-none absolute right-0 top-0 hidden h-[700px] w-[604.15px] bg-[#0E5A8A] lg:block" />
+
+        <div className="pointer-events-none absolute right-[35px] top-[86px] hidden h-[721.15px] w-[625px] lg:block">
+          <div className="absolute inset-[20.54%_10.39%_46.93%_56.86%]">
+            <img src={imgVector} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[24.99%_15.26%_12.27%_6.66%]">
+            <img src={imgVector1} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[58.05%_61.22%_7.03%_0]">
+            <img src={imgVector2} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[23.9%_68.43%_59.86%_13.88%]">
+            <img src={imgVector3} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[59.4%_68.33%_15.78%_11.54%]">
+            <img src={imgVector4} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[26.34%_21.42%_35.58%_33.92%]">
+            <img src={imgVector5} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[51.86%_11.17%_17.28%_80.75%]">
+            <img src={imgVector6} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[23.14%_81.46%_38.76%_0.03%]">
+            <img src={imgVector7} alt="" className="h-full w-full" aria-hidden />
+          </div>
+          <div className="absolute inset-[0_0_0_1.25%] overflow-hidden">
+            <img
+              src={imgPlaceholder}
+              alt="Doctor"
+              className="h-full w-full scale-[1.045] object-cover object-center"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </div>
+          <div className="absolute inset-[67.62%_17.83%_12.17%_56.11%]">
+            <img src={imgVector8} alt="" className="h-full w-full" aria-hidden />
+          </div>
+        </div>
+      </div>
 
       <div className="relative z-20 w-full px-4 pb-16 pt-[110px] sm:px-8 lg:px-[197px] lg:pb-0 lg:pt-[190px]">
         <div className="flex flex-col">
@@ -37,36 +87,9 @@ const FigmaHeroSection = () => {
                   Contact Leadership
                 </a>
               </div>
-
-              <div className="mt-10 lg:hidden">
-                <div className="relative mx-auto h-[320px] w-full max-w-[420px]">
-                  <div
-                    className="absolute left-1/2 top-1/2 h-[86%] w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-[42%_58%_62%_38%/48%_37%_63%_52%] bg-[linear-gradient(135deg,#1D9BF0_0%,#0E5A8A_58%,#14C94A_100%)] opacity-95"
-                    aria-hidden
-                  />
-                  <img
-                    src={heroDoctor}
-                    alt="Doctor"
-                    className="relative z-10 h-full w-full object-contain"
-                    loading="eager"
-                    decoding="async"
-                  />
-                </div>
-              </div>
             </div>
 
-            <div className="relative hidden h-[700px] w-[520px] lg:block">
-              <div className="absolute bottom-0 right-0 h-[92%] w-auto">
-                <img
-                  src={heroDoctor}
-                  alt="Doctor"
-                  className="h-full w-auto object-contain"
-                  loading="eager"
-                  decoding="async"
-                  fetchpriority="high"
-                />
-              </div>
-            </div>
+            <div className="hidden h-[220px] w-[415px] lg:block" />
           </div>
         </div>
       </div>

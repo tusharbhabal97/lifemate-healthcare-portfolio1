@@ -16,55 +16,6 @@ const mobileNavItems = [
   { label: 'Testimonials', path: '#testimonials' },
 ];
 
-const ArrowRightIcon = ({ className }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden
-  >
-    <path d="M5 12h14" />
-    <path d="M13 6l6 6-6 6" />
-  </svg>
-);
-
-const MenuIcon = ({ className }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden
-  >
-    <path d="M4 6h16" />
-    <path d="M4 12h16" />
-    <path d="M4 18h16" />
-  </svg>
-);
-
-const CloseIcon = ({ className }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.8"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    aria-hidden
-  >
-    <path d="M6 6l12 12" />
-    <path d="M18 6l-12 12" />
-  </svg>
-);
-
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -88,8 +39,6 @@ const Navbar = () => {
               src={logo}
               alt="LifeMate Healthcare logo"
               className="h-5 w-auto object-contain sm:h-6 lg:h-8 xl:h-9"
-              loading="eager"
-              decoding="async"
             />
             <span className="flex flex-col leading-none">
               <span className="text-[12px] font-extrabold tracking-[0.2px] text-[#0E5A8A] sm:text-[18px] lg:text-[20px]">
@@ -120,10 +69,12 @@ const Navbar = () => {
         <div className="hidden items-center lg:flex">
           <a
             href="#contact"
-            className="inline-flex h-[52px] min-w-[214px] items-center justify-center gap-[12px] rounded-[5px] bg-[#1D9BF0] px-[25px] py-[15px] text-[14px] font-bold leading-[22px] tracking-[0.2px] text-white transition-colors hover:bg-[#0E5A8A]"
+            className="inline-flex h-[52px] min-w-[214px] items-center justify-center gap-[15px] rounded-[5px] bg-[#1D9BF0] px-[25px] py-[15px] text-[14px] font-bold leading-[22px] tracking-[0.2px] text-white transition-colors hover:bg-[#0E5A8A]"
           >
             CONTACT US
-            <ArrowRightIcon className="h-4 w-4" />
+            <span className="text-sm" aria-hidden>
+              →
+            </span>
           </a>
         </div>
 
@@ -134,7 +85,7 @@ const Navbar = () => {
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[#D9E6EE] bg-white/80 text-[#0F172A] lg:hidden"
         >
-          {isMenuOpen ? <CloseIcon className="h-5 w-5" /> : <MenuIcon className="h-5 w-5" />}
+          {isMenuOpen ? '×' : '☰'}
         </button>
       </div>
 
