@@ -1,5 +1,20 @@
 import activityDoctor from '../../assets/activity-doctor.png';
 
+const ChevronRightIcon = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden
+  >
+    <path d="M9 6l6 6-6 6" />
+  </svg>
+);
+
 const roadmap = [
   {
     step: 'Phase 01',
@@ -44,6 +59,7 @@ const FigmaActivitySection = () => {
                 alt="Healthcare professional holding clipboard"
                 className="absolute bottom-0 left-1/2 h-[96%] w-auto -translate-x-1/2 object-contain drop-shadow-[0_18px_36px_rgba(15,23,42,0.18)]"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -81,7 +97,7 @@ const FigmaActivitySection = () => {
               href="#hospitals"
               className="mt-6 inline-flex items-center gap-[10px] text-[15px] font-bold leading-6 tracking-[0.2px] text-[#1D9BF0]"
             >
-              View Network <span aria-hidden>›</span>
+              View Network <ChevronRightIcon className="h-4 w-4" />
             </a>
           </div>
         </div>

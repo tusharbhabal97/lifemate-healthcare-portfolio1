@@ -2,6 +2,17 @@ import testimonial1 from '../../assets/testimonial-1.png';
 import testimonial2 from '../../assets/testimonial-2.png';
 import testimonial3 from '../../assets/testimonial-3.png';
 
+const StarIcon = ({ className }) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden
+  >
+    <path d="M12 17.3l-5.1 3 1.4-5.8L3.7 10l6-0.5L12 4l2.3 5.5 6 0.5-4.6 4.5 1.4 5.8-5.1-3z" />
+  </svg>
+);
+
 const testimonials = [
   {
     image: testimonial1,
@@ -60,6 +71,7 @@ const FigmaTestimonialsSection = () => {
                   alt={`${item.name} avatar`}
                   className="h-12 w-12 rounded-full object-cover ring-2 ring-[#EAF4FB]"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div>
                   <p className="text-[16px] font-bold leading-6 tracking-[0.2px] text-[#0F172A]">{item.name}</p>
@@ -69,11 +81,9 @@ const FigmaTestimonialsSection = () => {
 
               <div className="border-l-4 border-[#1D9BF0] pl-4">
                 <div className="mb-2 flex gap-[4px] text-[18px] leading-none">
-                  <span className="text-[#F59E0B]">★</span>
-                  <span className="text-[#F59E0B]">★</span>
-                  <span className="text-[#F59E0B]">★</span>
-                  <span className="text-[#F59E0B]">★</span>
-                  <span className="text-[#F59E0B]">★</span>
+                  {Array.from({ length: 5 }).map((_, starIndex) => (
+                    <StarIcon key={starIndex} className="h-4 w-4 text-[#F59E0B]" />
+                  ))}
                 </div>
                 <p className="text-[16px] leading-8 text-[#475569]">"{item.quote}"</p>
               </div>
