@@ -1,4 +1,4 @@
-import heroDoctor from '../../assets/hero-doctor.webp';
+import heroDoctor from '../../assets/hero-doctor.png';
 
 const FigmaHeroSection = () => {
   return (

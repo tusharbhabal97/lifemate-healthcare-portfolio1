@@ -1,4 +1,4 @@
-import logo from '../../assets/logo.webp';
+import logo from '../../assets/logo.png';
 
 const featureLinks = [
   { label: 'Home', href: '#home' },

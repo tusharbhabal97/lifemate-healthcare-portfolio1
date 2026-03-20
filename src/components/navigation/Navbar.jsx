@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.webp';
+import logo from '../../assets/logo.png';
 
 const mainNavItems = [
   { label: 'Home', path: '#home' },
