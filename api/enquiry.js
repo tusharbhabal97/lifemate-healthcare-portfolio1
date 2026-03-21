@@ -61,52 +61,37 @@ export default async function handler(req, res) {
   }
 
   try {
-    if (!process.env.VERCEL) {
-      try {
-        const dotenv = await import('dotenv');
-        dotenv.config();
-      } catch {
-        // Ignore if dotenv is not available; envs may already be injected.
-      }
-    }
-
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
     const { name, email, phone, enquiryType, message } = body || {};
 
-    const missingRequired = REQUIRED_FIELDS.filter((field) => !String(body?.[field] || '').trim());
-    if (missingRequired.length) {
-      return res.status(400).json({ error: `Missing required fields: ${missingRequired.join(', ')}` });
+    const missing = REQUIRED_FIELDS.filter((field) => !String(body?.[field] || '').trim());
+    if (missing.length) {
+      return res.status(400).json({ error: `Missing required fields: ${missing.join(', ')}` });
     }
 
     if (!isValidEmail(email)) {
       return res.status(400).json({ error: 'Invalid email address' });
     }
 
-    const smtpHost = (process.env.SMTP_HOST || '').trim();
-    const smtpPort = Number((process.env.SMTP_PORT || '587').trim());
-    const smtpUser = (process.env.SMTP_USER || '').trim();
-    const smtpPass = (process.env.SMTP_PASS || '').trim();
-    const smtpFrom = (process.env.SMTP_FROM || smtpUser).trim();
+    const {
+      SMTP_HOST,
+      SMTP_PORT,
+      SMTP_USER,
+      SMTP_PASS,
+      SMTP_FROM,
+    } = process.env;
 
-    const missing = [];
-    if (!smtpHost) missing.push('SMTP_HOST');
-    if (!smtpUser) missing.push('SMTP_USER');
-    if (!smtpPass) missing.push('SMTP_PASS');
-    if (!smtpFrom) missing.push('SMTP_FROM');
-
-    if (missing.length) {
-      return res.status(500).json({
-        error: `Server email configuration is incomplete: ${missing.join(', ')}`,
-      });
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !SMTP_FROM) {
+      return res.status(500).json({ error: 'Server email configuration is incomplete' });
     }
 
     const transporter = nodemailer.createTransport({
-      host: smtpHost,
-      port: smtpPort,
-      secure: smtpPort === 465,
+      host: SMTP_HOST,
+      port: Number(SMTP_PORT),
+      secure: Number(SMTP_PORT) === 465,
       auth: {
-        user: smtpUser,
-        pass: smtpPass,
+        user: SMTP_USER,
+        pass: SMTP_PASS,
       },
     });
 
@@ -114,15 +99,15 @@ export default async function handler(req, res) {
     const confirmationHtml = buildConfirmationHtml({ name });
 
     await transporter.sendMail({
-      from: smtpFrom,
-      to: smtpUser,
+      from: SMTP_FROM,
+      to: SMTP_USER,
       replyTo: email,
       subject: `New Enquiry from ${name}`,
       html: enquiryHtml,
     });
 
     await transporter.sendMail({
-      from: smtpFrom,
+      from: SMTP_FROM,
       to: email,
       subject: 'We received your enquiry',
       html: confirmationHtml,
