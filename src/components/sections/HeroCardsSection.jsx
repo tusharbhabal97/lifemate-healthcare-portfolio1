@@ -59,7 +59,7 @@ const cards = [
     iconBg: '#1D9BF0',
     Icon: HospitalIcon,
     location: 'Narayangaon, Pune District',
-    href: '#',
+    href: 'https://dr-hospital-website.vercel.app/',
   },
   {
     title: 'Dr. Mate Hospital, Belhe',
@@ -68,7 +68,7 @@ const cards = [
     iconBg: '#14C94A',
     Icon: ShieldIcon,
     location: 'Belhe, Pune District',
-    href: '#',
+    href: 'https://dr-hospital-website.vercel.app/',
   },
   {
     title: 'LifeMate Clinic',
@@ -77,7 +77,7 @@ const cards = [
     iconBg: '#334155',
     Icon: HeartIcon,
     location: 'Pune',
-    href: '#',
+    href: 'https://lifemate-clinic-n48n.vercel.app/',
   },
 ];
 
