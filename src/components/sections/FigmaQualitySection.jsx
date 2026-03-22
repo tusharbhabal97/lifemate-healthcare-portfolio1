@@ -3,18 +3,55 @@ const qualityHighlights = [
     title: 'Patient Safety Protocols',
     detail:
       'Standardized clinical checklists, medication safety steps, and infection prevention practices across all units.',
+    icon: 'safety',
   },
   {
     title: '24/7 Emergency Readiness',
     detail:
       'Round-the-clock triage, on-call specialists, and rapid escalation workflows for critical cases.',
+    icon: 'emergency',
   },
   {
     title: 'Continuous Quality Audits',
     detail:
       'Monthly clinical reviews, outcome tracking, and patient feedback loops to improve care delivery.',
+    icon: 'audit',
   },
 ];
+
+const ShieldCrossIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" />
+    <path d="M12 8v6" />
+    <path d="M9 11h6" />
+  </svg>
+);
+
+const SirenPulseIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <path d="M8 14h8" />
+    <path d="M9 14V9a3 3 0 0 1 6 0v5" />
+    <path d="M6 17h12" />
+    <path d="M12 3v2" />
+    <path d="M5 6l1.5 1" />
+    <path d="M19 6l-1.5 1" />
+  </svg>
+);
+
+const ClipboardSearchIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+    <rect x="6" y="4" width="12" height="16" rx="2" />
+    <path d="M9 4.5h6" />
+    <circle cx="11" cy="13" r="2.4" />
+    <path d="M15 17l2.2 2.2" />
+  </svg>
+);
+
+const qualityIcons = {
+  safety: ShieldCrossIcon,
+  emergency: SirenPulseIcon,
+  audit: ClipboardSearchIcon,
+};
 
 const FigmaQualitySection = () => {
   return (
@@ -45,22 +82,21 @@ const FigmaQualitySection = () => {
         </div>
 
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {qualityHighlights.map((item) => (
-            <article
-              key={item.title}
-              className="rounded-2xl border border-[#D9E6EE] bg-white p-6 shadow-[0_14px_28px_rgba(14,90,138,0.06)]"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#EAF4FB] text-[16px] font-bold text-[#0E5A8A]">
-                {item.title
-                  .split(' ')
-                  .map((word) => word[0])
-                  .slice(0, 2)
-                  .join('')}
-              </div>
-              <h3 className="mt-4 text-[18px] font-bold leading-7 text-[#0F172A]">{item.title}</h3>
-              <p className="mt-2 text-[14px] leading-6 tracking-[0.1px] text-[#475569]">{item.detail}</p>
-            </article>
-          ))}
+          {qualityHighlights.map((item) => {
+            const Icon = qualityIcons[item.icon];
+            return (
+              <article
+                key={item.title}
+                className="rounded-2xl border border-[#D9E6EE] bg-white p-6 shadow-[0_14px_28px_rgba(14,90,138,0.06)]"
+              >
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#EAF4FB] text-[#0E5A8A]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-4 text-[18px] font-bold leading-7 text-[#0F172A]">{item.title}</h3>
+                <p className="mt-2 text-[14px] leading-6 tracking-[0.1px] text-[#475569]">{item.detail}</p>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

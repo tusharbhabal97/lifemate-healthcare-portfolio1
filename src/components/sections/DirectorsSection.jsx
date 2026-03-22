@@ -7,7 +7,7 @@ const directors = [
       'Leads medical quality direction, patient-centered care standards, and long-term healthcare growth strategy.',
   },
   {
-    name: 'Ajay D. Mate',
+    name: 'Dr. Ajay D. Mate',
     designation: 'Director',
     area: 'Operations and Governance',
     summary:

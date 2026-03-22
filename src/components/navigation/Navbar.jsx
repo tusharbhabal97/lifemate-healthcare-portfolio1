@@ -28,7 +28,7 @@ const Navbar = () => {
 
   return (
     <header className="absolute inset-x-0 top-0 z-50 bg-transparent">
-      <div className="flex h-[88px] w-full items-center justify-between px-4 sm:h-[104px] sm:px-8 lg:h-[112px] lg:pl-[172px] lg:pr-[74px]">
+      <div className="mx-auto flex h-[88px] w-[min(1200px,95vw)] items-center justify-between px-4 sm:h-[104px] sm:px-8 lg:h-[112px]">
         <div className="flex items-center gap-6 lg:gap-10">
           <Link
             to="/"
