@@ -11,13 +11,13 @@ const imgVector8 = 'https://www.figma.com/api/mcp/asset/718cdaa5-7a1f-4931-a703-
 
 const FigmaHeroSection = () => {
   return (
-    <section id="home" className="relative overflow-hidden bg-[#F7FBFD] lg:h-[900px]" aria-label="Hero section">
+    <section id="home" className="relative overflow-hidden bg-[#F7FBFD] lg:min-h-[820px] xl:h-[900px]" aria-label="Hero section">
       <div className="relative w-full">
         <div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-[176.96px] w-[111.61px] rounded-br-[48px] bg-[#0E5A8A] lg:block" />
 
-        <div className="pointer-events-none absolute right-0 top-0 hidden h-[700px] w-[604.15px] bg-[#0E5A8A] lg:block" />
+        <div className="pointer-events-none absolute right-0 top-0 hidden h-[620px] w-[520px] bg-[#0E5A8A] lg:block xl:h-[700px] xl:w-[604.15px]" />
 
-        <div className="pointer-events-none absolute right-[35px] top-[86px] hidden h-[721.15px] w-[625px] lg:block">
+        <div className="pointer-events-none absolute right-[18px] top-[70px] hidden h-[620px] w-[520px] lg:block xl:right-[35px] xl:top-[86px] xl:h-[721.15px] xl:w-[625px]">
           <div className="absolute inset-[20.54%_10.39%_46.93%_56.86%]">
             <img src={imgVector} alt="" className="h-full w-full" aria-hidden />
           </div>
@@ -58,10 +58,10 @@ const FigmaHeroSection = () => {
         </div>
       </div>
 
-      <div className="relative z-20 w-full px-4 pb-16 pt-[110px] sm:px-8 lg:px-[197px] lg:pb-0 lg:pt-[190px]">
+      <div className="relative z-20 w-full px-4 pb-16 pt-[110px] sm:px-8 lg:px-[160px] lg:pb-0 lg:pt-[190px] xl:px-[197px]">
         <div className="flex flex-col">
           <div className="flex items-center gap-[30px]">
-            <div className="w-full max-w-[599px]">
+            <div className="w-full max-w-[560px] xl:max-w-[599px]">
               <p className="text-[16px] font-bold leading-6 tracking-[0.1px] text-[#1D9BF0]">
                 LifeMate Healthcare Pvt Ltd
               </p>
@@ -89,7 +89,7 @@ const FigmaHeroSection = () => {
               </div>
             </div>
 
-            <div className="hidden h-[220px] w-[415px] lg:block" />
+            <div className="hidden h-[220px] w-[320px] lg:block xl:w-[415px]" />
           </div>
         </div>
       </div>

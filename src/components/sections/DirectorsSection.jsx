@@ -14,7 +14,7 @@ const directors = [
       'Oversees operational discipline, service reliability, and governance frameworks across LifeMate Healthcare units.',
   },
   {
-    name: 'Leadership Office',
+    name: 'Dr. D. Mate',
     designation: 'Director - Clinical Operations',
     area: 'Strategy and Innovation',
     summary:
